@@ -1,8 +1,5 @@
 import os
-from dotenv import load_dotenv
-
 basedir = os.path.abspath(os.path.dirname(__file__))
-load_dotenv(os.path.join(basedir, '.env'))
 
 
 class Config:
@@ -16,13 +13,10 @@ class Config:
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
     FLASKY_MAIL_SENDER = 'flaskaulas@zohomail.com'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
-    FLASKY_NOTIFY = 'flaskaulasweb@zohomail.com'
-    FLASKY_NAME = os.environ.get('FLASKY_NAME')
-    FLASKY_PRONTUARIO = os.environ.get('FLASKY_PRONTUARIO')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     API_KEY = os.environ.get('API_KEY')
-    API_URL = os.environ.get('API_URL') or 'https://api.sendgrid.com/v3/mail/send'
+    API_URL = os.environ.get('API_URL')
     API_FROM = os.environ.get('API_FROM')
 
     @staticmethod
